@@ -1,0 +1,29 @@
+<div class="container bg-light">
+    <div class="row mt-5">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                {{#each resultQ}}
+                <a class="list-group-item list-group-item-action member-group-list"
+                    id="list-{{this._source.member_id}}-list" data-toggle="list" href="#list-{{this._source.member_id}}"
+                    role="tab" aria-controls="{{this._source.member_id}}">{{this._source.name}}
+                    {{this._source.firstname}}</a>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                {{#each resultQ}}
+                <div class="tab-pane fade member-tab" id="list-{{this._source.member_id}}" role="tabpanel"
+                    aria-labelledby="list-{{this._source.member_id}}-list">
+
+                    <ul class="p-3 list-unstyled">
+                        <li><i class="fas fa-phone-square-alt"></i> {{this._source.phone}}</li>
+                        <li><i class="fas fa-envelope"></i> {{this._source.email}}</li>
+                    </ul>
+
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

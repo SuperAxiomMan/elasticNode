@@ -1,0 +1,16 @@
+<div class="container bg-light">
+    <div class="row mt-5">
+        {{#each resultQ}}
+        <div class="border-bottom p-5">
+            <h4 class="">{{uppercase this._source.post_title}}</h3>
+                <div class="p-2">
+                    {{#each this._source.post_comments}}
+
+                    <p><b>{{this.comment_author}} </b>: <i>{{this.comment_content}}</i></p>
+
+                    {{/each}}
+                </div>
+        </div>
+        {{/each}}
+
+    </div>
